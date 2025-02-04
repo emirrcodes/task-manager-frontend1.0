@@ -132,6 +132,7 @@ const TaskList: React.FC = () => {
                 </div>
             )}
         </div>
+        console.log("Rendering TaskList");
     );
 };    
 

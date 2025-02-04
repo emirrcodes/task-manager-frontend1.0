@@ -13,6 +13,8 @@ const App: React.FC = () => {
         window.location.href = "/";
     }
 
+    console.log("Rendering App, isLoggedIn:", isLoggedIn);
+
     return (
         <Router>
             <div>
