@@ -2,7 +2,7 @@ import axios from "axios";
 import Task from "../types/Task";
 
 const api = axios.create({
-    baseURL: process.env.REACT_APP_API_URL || "http://localhost:3001"
+    baseURL: "https://task-manager-backend1-0.onrender.com",
 });
 
 api.interceptors.request.use((config) => {
