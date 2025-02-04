@@ -8,7 +8,7 @@ import "../styles/TaskList.css"
 const TaskList: React.FC = () => {
 
     console.log("TaskList bileşeni render ediliyor...");
-    
+
     const [tasks, setTasks] = useState<Task[]>([]);
     const [editingTaskId, setEditingTaskId] = useState<string | null>(null);
     const [updatedTitle, setUpdatedTitle] = useState('');
@@ -16,7 +16,9 @@ const TaskList: React.FC = () => {
 
     const fetchTasks = async () => {
         try {
+            console.log("TaskList - Görevleri çekme işlemi başladı...");
             const data: Task[] = await getTasks();
+            console.log("API'den gelen görevler:", data);
             if (Array.isArray(data)) {
                 const sortedTasks = data.sort((a, b) => {
                     if (a.status === "closed" && b.status !== "closed") return 1;
@@ -34,6 +36,7 @@ const TaskList: React.FC = () => {
     };
 
     useEffect(() => {
+        console.log("TaskList `useEffect` çalisti!");
         fetchTasks();
     }, []);
 
