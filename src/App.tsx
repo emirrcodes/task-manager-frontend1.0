@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import TaskList from "./components/TaskList";
 import handleDeleteUser from "./components/TaskList";
 import LoginForm from "./components/LoginForm";

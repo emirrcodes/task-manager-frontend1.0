@@ -6,6 +6,9 @@ import TaskForm from "./TaskForm";
 import "../styles/TaskList.css"
 
 const TaskList: React.FC = () => {
+
+    console.log("TaskList bileşeni render ediliyor...");
+    
     const [tasks, setTasks] = useState<Task[]>([]);
     const [editingTaskId, setEditingTaskId] = useState<string | null>(null);
     const [updatedTitle, setUpdatedTitle] = useState('');
