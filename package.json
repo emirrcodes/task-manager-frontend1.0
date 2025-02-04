@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "webpack serve --mode development",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "build": "webpack --mode production",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "dependencies": {
