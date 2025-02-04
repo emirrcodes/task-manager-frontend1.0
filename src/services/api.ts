@@ -24,9 +24,14 @@ export const getTasks = async () =>{
 };
 
 export const addTask = async (title: string, description: string) => {
+    const token = localStorage.getItem('token'); // Tokeni al
     const response = await api.post('/tasks', {
         title,
         description,
+    }, {
+        headers: {
+            Authorization: `Bearer ${token}`, // Tokeni ekle
+        },
     });
 
     return response.data;
