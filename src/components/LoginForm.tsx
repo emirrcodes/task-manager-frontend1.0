@@ -30,6 +30,8 @@ const LoginForm: React.FC = () => {
         }
     };
 
+    console.log(username, password);
+    
     return (
         <div style={{margin: "auto",
             width: "50%",
