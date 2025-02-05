@@ -1,46 +1,46 @@
-import React, { useEffect, useState } from "react";
-import { HashRouter as Router, Navigate, Route, Routes, useNavigate } from 'react-router-dom';
+import React, {useState} from "react";
+import { HashRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import TaskList from "./components/TaskList";
+import handleDeleteUser from "./components/TaskList";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 
 const App: React.FC = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('token'));
+    const isLoggedIn = !!localStorage.getItem('token');
 
     const handleLogout = () => {
         localStorage.removeItem('token');
-        setIsLoggedIn(false);
-    };
+        window.location.href = "/";
+    }
+
+    console.log("Rendering App, isLoggedIn:", isLoggedIn);
 
     return (
         <Router>
             <div>
                 {isLoggedIn && (
-                    <button onClick={handleLogout} style={{ margin: "10px", color: "red" }}>
+                    <button onClick={handleLogout} style = {{margin : "10px", color: "red"}}>
                         Log Out
                     </button>
                 )}
             </div>
             <Routes>
-                <Route path="/" element={<HomeRedirect isLoggedIn={isLoggedIn} />} />
-                <Route path="/tasks" element={isLoggedIn ? <TaskList /> : <Navigate to="/" />} />
-                <Route path="/register" element={<RegisterForm />} />
+                <Route 
+                path="/"
+                element={isLoggedIn ? <Navigate to="/tasks" /> : <LoginForm />}
+                />
+                <Route 
+                path="/tasks"
+                element={isLoggedIn ? <TaskList /> : <Navigate to="/" />}
+                />
+
+                <Route 
+                    path="/register" 
+                    element={<RegisterForm />} // /register rotası eklendi.
+                />
             </Routes>
         </Router>
     );
-};
-
-// Bu bileşen, yönlendirmeyi useEffect ile yapar ve sonsuz döngüyü engeller.
-const HomeRedirect: React.FC<{ isLoggedIn: boolean }> = ({ isLoggedIn }) => {
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        if (isLoggedIn) {
-            navigate("/tasks");
-        }
-    }, [isLoggedIn, navigate]);
-
-    return <LoginForm />;
 };
 
 export default App;
