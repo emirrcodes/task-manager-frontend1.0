@@ -29,10 +29,7 @@ const App: React.FC = () => {
                 path="/"
                 element={isLoggedIn ? <Navigate to="/tasks" /> : <LoginForm />}
                 />
-                <Route 
-                path="/tasks"
-                element={isLoggedIn ? <TaskList /> : <Navigate to="/" />}
-                />
+                
                 <Route 
                     path="/register" 
                     element={<RegisterForm />} // `/register` rotası eklendi.
