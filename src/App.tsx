@@ -8,7 +8,12 @@ const App: React.FC = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
 
     useEffect(() => {
-        setIsLoggedIn(!!localStorage.getItem("token"));
+        const checkAuth = () => {
+            setIsLoggedIn(!!localStorage.getItem("token"));
+        };
+    
+        window.addEventListener("storage", checkAuth);
+        return () => window.removeEventListener("storage", checkAuth);
     }, []);
 
     const handleLogout = () => {
@@ -28,8 +33,8 @@ const App: React.FC = () => {
                 )}
             </div>
             <Routes>
-                <Route path="/" element={isLoggedIn ? <Navigate to="/tasks" replace /> : <LoginForm />} />
-                <Route path="/tasks" element={isLoggedIn ? <TaskList /> : <Navigate to="/" replace />} />
+            <Route path="/" element={isLoggedIn ? <TaskList /> : <LoginForm />} />
+            <Route path="/tasks" element={isLoggedIn ? <TaskList /> : <Navigate to="/" />} />
                 <Route path="/register" element={<RegisterForm />} />
             </Routes>
         </Router>
