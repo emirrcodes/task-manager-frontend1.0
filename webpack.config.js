@@ -6,6 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'), // Çıkış klasörü
     filename: 'bundle.js', // Çıkış dosyası
+    clean : true,
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'], // Desteklenen dosya uzantıları
@@ -30,7 +31,7 @@ module.exports = {
     static: {
       directory: path.resolve(__dirname, 'dist'), // Statik dosyalar için klasör
     },
-    port: 3000, // Uygulamanın çalışacağı port
+    port: process.env.PORT || 3000, // Uygulamanın çalışacağı port
     open: true, // Tarayıcıyı otomatik aç
     hot: true, // Hot Module Replacement (HMR)
     historyApiFallback: true, // SPA'ler için
