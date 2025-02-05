@@ -13,8 +13,7 @@ const App: React.FC = () => {
 
     const handleLogout = () => {
         localStorage.removeItem("token");
-        setIsLoggedIn(false); // State'i güncelle
-        window.location.href = "/";
+        setIsLoggedIn(false);
     };
 
     console.log("Rendering App, isLoggedIn:", isLoggedIn);
@@ -29,8 +28,8 @@ const App: React.FC = () => {
                 )}
             </div>
             <Routes>
-                <Route path="/" element={isLoggedIn ? <TaskList /> : <LoginForm />} />
-                <Route path="/tasks" element={isLoggedIn ? <TaskList /> : <Navigate to="/" />} />
+                <Route path="/" element={isLoggedIn ? <Navigate to="/tasks" replace /> : <LoginForm />} />
+                <Route path="/tasks" element={isLoggedIn ? <TaskList /> : <Navigate to="/" replace />} />
                 <Route path="/register" element={<RegisterForm />} />
             </Routes>
         </Router>
