@@ -40,8 +40,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
-{/* <Route 
-                path="/tasks"
-                element={isLoggedIn ? <TaskList /> : <Navigate to="/" />}
-                /> */}
