@@ -43,7 +43,7 @@ const LoginForm: React.FC = () => {
             onKeyDown={handleKeyDown}
             tabIndex={0}
             >
-            <h2>Giriş Yap</h2>
+            <h2>Log In</h2>
             <input type="text" 
                    placeholder="Username"
                    value={username} 
