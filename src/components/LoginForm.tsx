@@ -43,7 +43,7 @@ const LoginForm: React.FC = () => {
             onKeyDown={handleKeyDown}
             tabIndex={0}
             >
-                <h4 style={{color : "red"}}>IMPORTANT WARNING : Backend can be sleeping(because I used free trial web service) right now so at the first you should
+                <h4 style={{color : "red"}}>IMPORTANT WARNING : Backend can be sleeping right now (because I used free trial web service) so at the first you should
                     wait for a minute to system wake backend up. After that you can use and test the site without waiting.
                 </h4>
             <h2>Log In</h2>
