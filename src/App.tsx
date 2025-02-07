@@ -35,7 +35,7 @@ const App: React.FC = () => {
             <Routes>
             <Route path="/" element={isLoggedIn ? <TaskList /> : <LoginForm />} />
             <Route path="/tasks" element={isLoggedIn ? <TaskList /> : <Navigate to="/" />} />
-                <Route path="/register" element={<RegisterForm />} />
+            <Route path="/register" element={<RegisterForm />} />
             </Routes>
         </Router>
     );
