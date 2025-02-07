@@ -43,6 +43,9 @@ const LoginForm: React.FC = () => {
             onKeyDown={handleKeyDown}
             tabIndex={0}
             >
+                <h1>IMPORTANT WARNING : Backend can be sleeping(because I used free trial web service) right now so at the first you should
+                    wait for a minute to system wake backend up. After that you can use and test the site without waiting.
+                </h1>
             <h2>Log In</h2>
             <input type="text" 
                    placeholder="Username"
