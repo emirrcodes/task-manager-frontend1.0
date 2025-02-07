@@ -20,7 +20,7 @@ const LoginForm: React.FC = () => {
             alert('Giriş başarili!');
             window.location.href = "/tasks";
         }catch(err){
-            setError('Giriş başarisiz, lütfen girdiğiniz değerleri tekrar kontrol ediniz !!!!!! 31 porno sex');
+            setError('Giriş başarisiz, lütfen girdiğiniz değerleri tekrar kontrol ediniz !!!!!!');
         }
     };
 
