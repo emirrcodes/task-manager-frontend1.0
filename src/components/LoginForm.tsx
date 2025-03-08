@@ -39,14 +39,12 @@ const LoginForm: React.FC = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            height: "50vh",}}
+            height: "30vh",}}
             onKeyDown={handleKeyDown}
             tabIndex={0}
             >
-                <h4 style={{color : "red"}}>IMPORTANT WARNING: The backend might be asleep right now (because I used a free trial web service). 
-                So at first, you should wait a minute for the system to wake the backend up. 
-                After that, you can use and test the site without any delays. (My free trial in online Database service has expired. So
-                the features are not reachable now :/ Maybe I will use another free database service before someone see this :) )
+                <h4 style={{color : "red"}}>IMPORTANT WARNING: My free trial in online Database service has expired. So
+                the features are not reachable now :/ Maybe I will use another free database service before someone see this :) 
 
                 </h4>
             <h2>Log In</h2>
