@@ -39,7 +39,7 @@ const LoginForm: React.FC = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            height: "30vh",}}
+            height: "40vh",}}
             onKeyDown={handleKeyDown}
             tabIndex={0}
             >
